@@ -1,0 +1,57 @@
+[
+ {
+  "stop": "1:7:4",
+  "restart": "1:7:5",
+  "basis": "decided by eye"
+ },
+ {
+  "stop": "2:96:5",
+  "restart": "2:96:6",
+  "basis": "readings agree"
+ },
+ {
+  "stop": "2:123:8",
+  "restart": "2:123:9",
+  "basis": "readings agree"
+ },
+ {
+  "stop": "3:30:9",
+  "restart": "3:30:10",
+  "basis": "readings agree"
+ },
+ {
+  "stop": "9:111:28",
+  "restart": "9:111:29",
+  "basis": "readings agree"
+ },
+ {
+  "stop": "9:126:10",
+  "restart": "9:126:11",
+  "basis": "blind reading, tag positions checked"
+ },
+ {
+  "stop": "48:26:9",
+  "restart": "48:26:10",
+  "basis": "blind reading, tag positions checked"
+ },
+ {
+  "stop": "59:2:22",
+  "restart": "59:2:23",
+  "basis": "blind reading, tag positions checked"
+ },
+ {
+  "stop": "60:1:32",
+  "restart": "60:1:33",
+  "basis": "blind reading, tag positions checked"
+ },
+ {
+  "stop": "62:8:8",
+  "restart": "62:8:9",
+  "basis": "blind reading, tag positions checked"
+ },
+ {
+  "stop": "98:5:8",
+  "restart": "98:5:9",
+  "basis": "blind reading, tag positions checked"
+ }
+]

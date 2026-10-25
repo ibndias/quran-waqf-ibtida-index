@@ -1,0 +1,1145 @@
+[
+{
+"page": 3,
+"act": "accept",
+"pair": [
+"2:11:8",
+"2:11:8"
+],
+"note": "single word qalu, tags span it"
+},
+{
+"page": 5,
+"act": "accept",
+"pair": [
+"2:25:19",
+"2:25:19"
+],
+"note": "single word qalu"
+},
+{
+"page": 140,
+"act": "accept",
+"pair": [
+"6:99:12",
+"6:99:14"
+],
+"note": "mulai flush with fa-akhrajna"
+},
+{
+"page": 159,
+"act": "accept",
+"pair": [
+"7:72:6",
+"7:72:6"
+],
+"note": "single word wa-qatana"
+},
+{
+"page": 160,
+"act": "accept",
+"pair": [
+"7:80:5",
+"7:80:9"
+],
+"note": "wraps, henti under biha line 14"
+},
+{
+"page": 160,
+"act": "accept",
+"pair": [
+"7:77:7",
+"7:77:7"
+],
+"note": "single word wa-qalu"
+},
+{
+"page": 160,
+"act": "accept",
+"pair": [
+"7:75:9",
+"7:75:11"
+],
+"note": "mulai flush with liman"
+},
+{
+"page": 162,
+"act": "accept",
+"pair": [
+"7:95:8",
+"7:95:11"
+],
+"note": "mulai flush with wa-qalu"
+},
+{
+"page": 163,
+"act": "accept",
+"pair": [
+"7:100:4",
+"7:100:8"
+],
+"note": "henti flush with ahliha"
+},
+{
+"page": 166,
+"act": "accept",
+"pair": [
+"7:137:4",
+"7:137:7"
+],
+"note": "mulai under kanu"
+},
+{
+"page": 241,
+"act": "accept",
+"pair": [
+"12:46:4",
+"12:46:8"
+],
+"note": "three pairs split, pass1 and blind agree"
+},
+{
+"page": 241,
+"act": "accept",
+"pair": [
+"12:46:9",
+"12:46:11"
+],
+"note": "three pairs split, pass1 and blind agree"
+},
+{
+"page": 241,
+"act": "accept",
+"pair": [
+"12:46:12",
+"12:46:16"
+],
+"note": "three pairs split, pass1 and blind agree"
+},
+{
+"page": 241,
+"act": "reject",
+"pair": [
+"12:46:4",
+"12:46:16"
+],
+"note": "merged"
+},
+{
+"page": 241,
+"act": "accept",
+"pair": [
+"12:52:7",
+"12:52:8"
+],
+"note": "parser and blind"
+},
+{
+"page": 276,
+"act": "accept",
+"pair": [
+"16:80:7",
+"16:80:12"
+],
+"note": "wraps"
+},
+{
+"page": 276,
+"act": "reject",
+"pair": [
+"16:80:7",
+"16:80:10"
+],
+"note": "x"
+},
+{
+"page": 276,
+"act": "reject",
+"pair": [
+"16:80:11",
+"16:80:12"
+],
+"note": "x"
+},
+{
+"page": 277,
+"act": "accept",
+"pair": [
+"16:88:7",
+"16:88:10"
+],
+"note": "henti box under al-adhab left end"
+},
+{
+"page": 277,
+"act": "reject",
+"pair": [
+"16:88:7",
+"16:88:11"
+],
+"note": "x"
+},
+{
+"page": 293,
+"act": "accept",
+"pair": [
+"18:2:1",
+"18:2:1"
+],
+"note": "single word qayyiman"
+},
+{
+"page": 294,
+"act": "accept",
+"pair": [
+"18:10:6",
+"18:10:6"
+],
+"note": "tag box spans faqalu exactly"
+},
+{
+"page": 294,
+"act": "reject",
+"pair": [
+"18:10:6",
+"18:10:7"
+],
+"note": "x"
+},
+{
+"page": 294,
+"act": "accept",
+"pair": [
+"18:7:8",
+"18:7:8"
+],
+"note": "single word li-nabluwahum"
+},
+{
+"page": 298,
+"act": "accept",
+"pair": [
+"18:45:14",
+"18:45:15"
+],
+"note": "parser right, blind missed"
+},
+{
+"page": 298,
+"act": "accept",
+"pair": [
+"18:42:10",
+"18:42:13"
+],
+"note": "mulai flush with wa-hiya"
+},
+{
+"page": 299,
+"act": "accept",
+"pair": [
+"18:47:7",
+"18:47:7"
+],
+"note": "single word"
+},
+{
+"page": 327,
+"act": "accept",
+"pair": [
+"21:66:7",
+"21:66:9"
+],
+"note": "mulai flush with ma"
+},
+{
+"page": 327,
+"act": "reject",
+"pair": [
+"21:66:6",
+"21:66:9"
+],
+"note": "x"
+},
+{
+"page": 343,
+"act": "accept",
+"pair": [
+"23:21:10",
+"23:21:13"
+],
+"note": "gap in underline under munafi tail, no tags between"
+},
+{
+"page": 343,
+"act": "reject",
+"pair": [
+"23:21:10",
+"23:21:12"
+],
+"note": "x"
+},
+{
+"page": 343,
+"act": "reject",
+"pair": [
+"23:21:12",
+"23:21:13"
+],
+"note": "x"
+},
+{
+"page": 7,
+"act": "reject",
+"pair": [
+"2:38:13",
+"2:38:14"
+],
+"note": "x4 zoom MULAI flush with right end of fa-la so 12 to 14 stands"
+},
+{
+"page": 12,
+"act": "reject",
+"pair": [
+"2:83:7",
+"2:83:9"
+],
+"note": "x4 zoom MULAI flush with right end of la so 6 to 9 stands"
+},
+{
+"page": 14,
+"act": "accept",
+"pair": [
+"2:91:8",
+"2:91:8"
+],
+"note": "sheet single word qalu tags span it"
+},
+{
+"page": 19,
+"act": "reject",
+"pair": [
+"2:120:25",
+"2:120:27"
+],
+"note": "sheet MULAI right edge at right end of word 3 ma so 24 to 27 stands"
+},
+{
+"page": 22,
+"act": "reject",
+"pair": [
+"2:145:23",
+"2:145:24"
+],
+"note": "wrap split by parser, 23 to 28 stands"
+},
+{
+"page": 22,
+"act": "reject",
+"pair": [
+"2:145:25",
+"2:145:28"
+],
+"note": "wrap split by parser"
+},
+{
+"page": 38,
+"act": "accept",
+"pair": [
+"2:237:14",
+"2:237:16"
+],
+"note": "x4 zoom MULAI flush with illa, HENTI at left end of yafuna, pass1 note says the same"
+},
+{
+"page": 38,
+"act": "reject",
+"pair": [
+"2:237:7",
+"2:237:8"
+],
+"note": "wrap misread, 7 to 10 stands"
+},
+{
+"page": 42,
+"act": "reject",
+"pair": [
+"2:254:7",
+"2:254:12"
+],
+"note": "x4 zoom HENTI at left end of yawmun n7 so 7 to 11 stands"
+},
+{
+"page": 70,
+"act": "accept",
+"pair": [
+"3:157:8",
+"3:157:11"
+],
+"note": "zoom MULAI at right end of n3, HENTI at left end of n6"
+},
+{
+"page": 94,
+"act": "reject",
+"pair": [
+"4:98:8",
+"4:98:9"
+],
+"note": "x4 zoom MULAI flush with la so 7 to 9 stands"
+},
+{
+"page": 99,
+"act": "reject",
+"pair": [
+"4:128:10",
+"4:128:11"
+],
+"note": "x4 zoom MULAI under fa-la so 9 to 11 stands"
+},
+{
+"page": 106,
+"act": "reject",
+"pair": [
+"5:2:15",
+"5:2:17"
+],
+"note": "underline wraps to line 12, 15 to 18 stands"
+},
+{
+"page": 108,
+"act": "reject",
+"pair": [
+"5:7:5",
+"5:7:7"
+],
+"note": "underline wraps, 5 to 8 stands"
+},
+{
+"page": 112,
+"act": "accept",
+"pair": [
+"5:30:6",
+"5:30:6"
+],
+"note": "x4 zoom single word faqatalahu, pass1 note agrees"
+},
+{
+"page": 136,
+"act": "accept",
+"pair": [
+"6:71:18",
+"6:71:20"
+],
+"note": "scan line 9 starts with kalladhi, Allah ends line 8, blind note and pass1 agree"
+},
+{
+"page": 136,
+"act": "reject",
+"pair": [
+"6:71:17",
+"6:71:20"
+],
+"note": "line break off by one in lb"
+},
+{
+"page": 139,
+"act": "reject",
+"pair": [
+"6:94:5",
+"6:94:7"
+],
+"note": "x4 zoom MULAI flush with kama at line 13 start, 4 to 7 stands"
+},
+{
+"page": 142,
+"act": "reject",
+"pair": [
+"6:113:8",
+"6:113:9"
+],
+"note": "x4 zoom both tags under waliyardawhu, single 8 stands"
+},
+{
+"page": 145,
+"act": "reject",
+"pair": [
+"6:133:8",
+"6:133:11"
+],
+"note": "kama ends line 3 not line 4, fitted break off by one, 8 to 12 and 13 to 14 stand"
+},
+{
+"page": 145,
+"act": "reject",
+"pair": [
+"6:133:12",
+"6:133:14"
+],
+"note": "same break error"
+},
+{
+"page": 149,
+"act": "accept",
+"pair": [
+"6:155:5",
+"6:155:5"
+],
+"note": "blind and pass1 note both describe the single word fattabiuhu at line 9 left end"
+},
+{
+"page": 150,
+"act": "reject",
+"pair": [
+"6:158:7",
+"6:158:10"
+],
+"note": "degenerate span, blind note puts HENTI at left end of rabbuka 9"
+},
+{
+"page": 199,
+"act": "accept",
+"pair": [
+"9:76:7",
+"9:76:7"
+],
+"note": "blind and pass1 note both see single word watawallaw"
+},
+{
+"page": 200,
+"act": "accept",
+"pair": [
+"9:81:7",
+"9:81:7"
+],
+"note": "blind and pass1 note both see single word wakarihu"
+},
+{
+"page": 200,
+"act": "accept",
+"pair": [
+"9:81:15",
+"9:81:15"
+],
+"note": "blind and pass1 note both see single word waqalu"
+},
+{
+"page": 184,
+"act": "reject",
+"pair": [
+"8:53:7",
+"8:53:11"
+],
+"note": "x4 zoom and sheet HENTI at left end of qawmin which is 10"
+},
+{
+"page": 187,
+"act": "reject",
+"pair": [
+"9:2:6",
+"9:2:9"
+],
+"note": "sheet underline wraps to line 4 word 1, 6 to 10 stands"
+},
+{
+"page": 187,
+"act": "reject",
+"pair": [
+"9:6:6",
+"9:6:11"
+],
+"note": "sheet line 15 HENTI at left end of Allah word 2, 6 to 10 stands"
+},
+{
+"page": 190,
+"act": "reject",
+"pair": [
+"9:25:13",
+"9:25:15"
+],
+"note": "x4 zoom MULAI flush with falam at line 12 start, 12 to 15 stands"
+},
+{
+"page": 194,
+"act": "reject",
+"pair": [
+"9:45:9",
+"9:45:11"
+],
+"note": "x4 zoom HENTI at left end of qulubuhum 10"
+},
+{
+"page": 198,
+"act": "reject",
+"pair": [
+"9:72:5",
+"9:72:8"
+],
+"note": "wrap split, 5 to 9 stands"
+},
+{
+"page": 198,
+"act": "reject",
+"pair": [
+"9:72:9",
+"9:72:9"
+],
+"note": "wrap split"
+},
+{
+"page": 211,
+"act": "accept",
+"pair": [
+"10:22:26",
+"10:22:26"
+],
+"note": "blind and pass1 note both see single word wazannu"
+},
+{
+"page": 213,
+"act": "reject",
+"pair": [
+"10:37:17",
+"10:37:18"
+],
+"note": "wrap, blind 7w9 to 8w1, 17 to 19 stands"
+},
+{
+"page": 208,
+"act": "reject",
+"pair": [
+"10:2:10",
+"10:2:11"
+],
+"note": "row zoom MULAI at right end of an, 9 to 11 stands"
+},
+{
+"page": 208,
+"act": "reject",
+"pair": [
+"10:3:12",
+"10:3:14"
+],
+"note": "row zoom MULAI past right end of thumma, 11 to 14 stands"
+},
+{
+"page": 211,
+"act": "reject",
+"pair": [
+"10:22:17",
+"10:22:20"
+],
+"note": "x4 zoom MULAI box body lies under jaatha 18, 18 to 20 stands"
+},
+{
+"page": 213,
+"act": "accept",
+"pair": [
+"10:38:8",
+"10:38:13"
+],
+"note": "scan line 9 starts with mithlihi, MULAI under wadu, blind note and pass1 agree"
+},
+{
+"page": 213,
+"act": "reject",
+"pair": [
+"10:38:9",
+"10:38:13"
+],
+"note": "fitted line break off by one"
+},
+{
+"page": 227,
+"act": "reject",
+"pair": [
+"11:48:5",
+"11:48:7"
+],
+"note": "ink profile MULAI right edge at right end of the waw of wabarakatin, 6 to 7 stands"
+},
+{
+"page": 228,
+"act": "reject",
+"pair": [
+"11:61:18",
+"11:61:18"
+],
+"note": "ink profile HENTI at left end of fiha, 18 to 19 stands"
+},
+{
+"page": 230,
+"act": "reject",
+"pair": [
+"11:81:15",
+"11:81:17"
+],
+"note": "row zoom MULAI at right end of wala word 3, 14 to 17 stands"
+},
+{
+"page": 271,
+"act": "accept",
+"pair": [
+"16:37:5",
+"16:37:6"
+],
+"note": "blind and pass1 note both see the wrap from fa-inna to Allah"
+},
+{
+"page": 333,
+"act": "accept",
+"pair": [
+"22:14:8",
+"22:14:8"
+],
+"note": "blind and pass1 note both see single word jannatin"
+},
+{
+"page": 321,
+"act": "reject",
+"pair": [
+"20:134:7",
+"20:134:8"
+],
+"note": "blind sees single word laqalu, pass1 agrees"
+},
+{
+"page": 317,
+"act": "accept",
+"pair": [
+"20:86:17",
+"20:86:24"
+],
+"note": "scan line 13 opens with al-ahdu, MULAI at am, blind note and pass1 agree"
+},
+{
+"page": 317,
+"act": "reject",
+"pair": [
+"20:86:18",
+"20:86:24"
+],
+"note": "fitted line break off by one"
+},
+{
+"page": 244,
+"act": "accept",
+"pair": [
+"12:72:5",
+"12:72:9"
+],
+"note": "scan line 4 opens with waliman, blind note and pass1 agree"
+},
+{
+"page": 244,
+"act": "reject",
+"pair": [
+"12:72:7",
+"12:72:9"
+],
+"note": "fitted line break off"
+},
+{
+"page": 279,
+"act": "reject",
+"pair": [
+"16:104:7",
+"16:104:8"
+],
+"note": "wrap, 7 to 9 stands"
+},
+{
+"page": 279,
+"act": "reject",
+"pair": [
+"16:106:13",
+"16:106:16"
+],
+"note": "scan line 7 ends with sadran 17, blind note and pass1 agree"
+},
+{
+"page": 263,
+"act": "reject",
+"pair": [
+"15:28:5",
+"15:28:8"
+],
+"note": "scan line 12 lacks min at its end, 5 to 7 stands"
+},
+{
+"page": 303,
+"act": "reject",
+"pair": [
+"18:95:6",
+"18:95:8"
+],
+"note": "blind and pass1 put MULAI at faainuni 7"
+},
+{
+"page": 291,
+"act": "reject",
+"pair": [
+"17:94:6",
+"17:94:7"
+],
+"note": "wrap split, 6 to 8 stands"
+},
+{
+"page": 291,
+"act": "reject",
+"pair": [
+"17:94:8",
+"17:94:8"
+],
+"note": "wrap split"
+},
+{
+"page": 251,
+"act": "reject",
+"pair": [
+"13:14:9",
+"13:14:11"
+],
+"note": "blind and pass1 put MULAI at la 8"
+},
+{
+"page": 247,
+"act": "reject",
+"pair": [
+"12:99:9",
+"12:99:10"
+],
+"note": "blind and pass1 put MULAI at waqala 8"
+},
+{
+"page": 273,
+"act": "reject",
+"pair": [
+"16:62:8",
+"16:62:11"
+],
+"note": "blind and pass1 put HENTI at 10"
+},
+{
+"page": 248,
+"act": "reject",
+"pair": [
+"12:110:5",
+"12:110:6"
+],
+"note": "zoom shows one underline 5 to 8"
+},
+{
+"page": 248,
+"act": "reject",
+"pair": [
+"12:110:8",
+"12:110:8"
+],
+"note": "zoom shows one underline 5 to 8"
+},
+{
+"page": 248,
+"act": "reject",
+"pair": [
+"12:111:17",
+"12:111:18"
+],
+"note": "blind and pass1 put HENTI at 19"
+},
+{
+"page": 55,
+"act": "reject",
+"pair": [
+"3:39:12",
+"3:39:14"
+],
+"note": "wrap split, 12 to 15 stands"
+},
+{
+"page": 58,
+"act": "reject",
+"pair": [
+"3:66:4",
+"3:66:6"
+],
+"note": "wrap split, 4 to 7 stands"
+},
+{
+"page": 58,
+"act": "reject",
+"pair": [
+"3:64:4",
+"3:64:9"
+],
+"note": "ink profile MULAI right edge at the gap right of ila 5"
+},
+{
+"page": 152,
+"act": "reject",
+"pair": [
+"7:13:4",
+"7:13:8"
+],
+"note": "wrap split, 4 to 9 stands"
+},
+{
+"page": 52,
+"act": "accept",
+"pair": [
+"3:19:11",
+"3:19:16"
+],
+"note": "parser agrees with the blind reading"
+},
+{
+"page": 59,
+"act": "accept",
+"pair": [
+"3:77:9",
+"3:77:12"
+],
+"note": "parser agrees, MULAI overshoot as usual"
+},
+{
+"page": 158,
+"act": "accept",
+"pair": [
+"7:66:7",
+"7:66:10"
+],
+"note": "parser agrees, MULAI overshoot as usual"
+},
+{
+"page": 335,
+"act": "accept",
+"pair": [
+"22:27:7",
+"22:27:9"
+],
+"note": "ink profile MULAI right edge at right end of leftmost word wa-ala on line 7"
+},
+{
+"page": 335,
+"act": "reject",
+"pair": [
+"22:27:8",
+"22:27:9"
+],
+"note": "parser one word off"
+},
+{
+"page": 480,
+"act": "accept",
+"pair": [
+"41:30:8",
+"41:30:10"
+],
+"note": "wrap, blind reading after band fix, parser split it"
+},
+{
+"page": 480,
+"act": "reject",
+"pair": [
+"41:30:8",
+"41:30:9"
+],
+"note": "wrap split"
+},
+{
+"page": 480,
+"act": "reject",
+"pair": [
+"41:30:10",
+"41:30:10"
+],
+"note": "wrap split"
+},
+{
+"page": 480,
+"act": "accept",
+"pair": [
+"41:38:6",
+"41:38:9"
+],
+"note": "row zoom HENTI under walnahari word 5"
+},
+{
+"page": 480,
+"act": "reject",
+"pair": [
+"41:38:6",
+"41:38:10"
+],
+"note": "parser one word off"
+},
+{
+"page": 416,
+"act": "reject",
+"pair": [
+"32:20:13",
+"32:20:16"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 416,
+"act": "reject",
+"pair": [
+"32:13:7",
+"32:13:9"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 416,
+"act": "reject",
+"pair": [
+"32:20:17",
+"32:20:17"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 424,
+"act": "reject",
+"pair": [
+"33:49:9",
+"33:49:13"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 426,
+"act": "reject",
+"pair": [
+"33:55:7",
+"33:55:9"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 426,
+"act": "reject",
+"pair": [
+"33:60:8",
+"33:60:11"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 426,
+"act": "reject",
+"pair": [
+"33:59:5",
+"33:59:7"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 428,
+"act": "reject",
+"pair": [
+"34:5:6",
+"34:5:6"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 464,
+"act": "reject",
+"pair": [
+"39:50:6",
+"39:50:7"
+],
+"note": "wrap split"
+},
+{
+"page": 470,
+"act": "reject",
+"pair": [
+"40:29:22",
+"40:29:24"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 470,
+"act": "reject",
+"pair": [
+"40:28:9",
+"40:28:13"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 475,
+"act": "reject",
+"pair": [
+"40:67:16",
+"40:67:17"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 478,
+"act": "reject",
+"pair": [
+"41:20:6",
+"41:20:7"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 353,
+"act": "reject",
+"pair": [
+"24:31:39",
+"24:31:42"
+],
+"note": "agreed reading stands"
+},
+{
+"page": 346,
+"act": "accept",
+"pair": [
+"23:63:7",
+"23:63:8"
+],
+"note": "two readings agree, edge noted as close"
+},
+{
+"page": 350,
+"act": "accept",
+"pair": [
+"24:2:16",
+"24:2:19"
+],
+"note": "two readings agree, edge noted as close"
+},
+{
+"page": 353,
+"act": "accept",
+"pair": [
+"24:31:11",
+"24:31:14"
+],
+"note": "two readings agree, edge noted as close"
+},
+{
+"page": 433,
+"act": "accept",
+"pair": [
+"34:40:4",
+"34:40:6"
+],
+"note": "two readings agree, edge noted as close"
+},
+{
+"page": 464,
+"act": "accept",
+"pair": [
+"39:50:6",
+"39:50:8"
+],
+"note": "two readings agree, edge noted as close"
+}
+]
