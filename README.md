@@ -30,6 +30,25 @@ licence of its own.
 | `data/waqf-ibtida.csv` | The same marks as a table, one per row |
 | `provenance/decisions.json` | Every mark settled by eye, with the reason for each |
 | `provenance/stops.json` | The 11 no-underline stop marks |
+| `pages/NNN.webp` | The 604 page images the marks were read from (`001.webp` to `604.webp`), as downloaded from quran.tampang.com on 2026-10-23 |
+
+## Contributing a correction
+
+Every mark carries its `page`, `restart_line` and `stop_line`, so you can check it against
+the image it came from:
+
+1. Open `pages/NNN.webp` for the mark's page. NNN is the page number, zero-padded to three
+   digits.
+2. Find the line and look at the tags. The MULAI tag sits flush with the right end of the
+   word where reading restarts. The HENTI tag sits flush with the left end of the word where
+   reading stops.
+3. If a mark is wrong or missing, open an issue or a pull request. Include the page, the line,
+   the mark's `id` (or `restart` / `stop`), and what the image shows; a cropped screenshot
+   helps.
+
+Note: `pages/346.webp` was served cut off on the left (675 px wide; the other pages are about
+807 px). The full printed page has a single underline, 23:63:7–8, and that mark is already
+in the index.
 
 ## One mark
 
@@ -84,4 +103,10 @@ tanda dirujuk per kata dengan format `surat:ayat:kata`. Isinya 2.213 tanda: 2.20
 garis, lanjut ke kata berikutnya).
 
 Setiap halaman dibaca dua kali secara terpisah, dan semua beda pendapat dicek dengan scan yang
-diperbesar. Sumber: scan halaman di [quran.tampang.com](https://quran.tampang.com/).
+diperbesar. Sumber: scan halaman di [quran.tampang.com](https://quran.tampang.com/). Ke-604
+gambar halaman yang dipakai ada di folder `pages/`.
+
+**Kirim koreksi:** buka `pages/NNN.webp` sesuai `page` tanda tersebut, lalu lihat baris
+`restart_line` atau `stop_line`. Kalau ada tanda yang salah atau terlewat, buat issue atau pull
+request dengan menyebut halaman, baris, `id` tanda, dan apa yang terlihat di gambar
+(sebaiknya sertakan potongan gambarnya).
