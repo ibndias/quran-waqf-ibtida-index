@@ -22,10 +22,11 @@ The marks were read off the page images published at **[quran.tampang.com](https
 source. The site names no publisher and states no licence, so this repository adds no
 licence of its own.
 
-**Preview:** `index.html` is a static viewer (deployed on Netlify) that draws each page as
-digital Quran text with the index applied (underline from MULAI to HENTI), links the page's
-scan for checking, and has a "Report a correction" link on every mark. The page text in
-`demo/text/` is quran.com's Uthmani text and line layout.
+**Preview:** `index.html` is a static viewer (deployed on Netlify). Each page shows the
+digital Quran text with the index applied (underline from MULAI to HENTI) side by side with
+the scan the marks were read from. If they differ, "Report a difference to GitHub" opens a
+prefilled issue; every mark also has its own "Report a correction" link. The page text in
+`demo/text/` is quran.com's Uthmani text.
 
 ## Files
 
