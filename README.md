@@ -22,6 +22,9 @@ The marks were read off the page images published at **[quran.tampang.com](https
 source. The site names no publisher and states no licence, so this repository adds no
 licence of its own.
 
+**Preview:** `index.html` is a static viewer (deployed on Netlify) that shows each page's
+marks beside its scan, with a "Report a correction" link on every mark.
+
 ## Files
 
 | File | What it is |
