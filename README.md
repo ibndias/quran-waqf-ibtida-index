@@ -28,6 +28,10 @@ the scan the marks were read from. If they differ, "Report a difference to GitHu
 prefilled issue; every mark also has its own "Report a correction" link. The page text in
 `demo/text/` is quran.com's Uthmani text.
 
+The site also has plain pages a search engine can read: `page/N/` for each mushaf page and
+`surah/N/` for each surah, plus `sitemap.xml`. They are written from the data by
+`python3 tools/build_site.py`; re-run it after the data changes.
+
 ## Files
 
 | File | What it is |

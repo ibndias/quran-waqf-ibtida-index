@@ -1,10 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Waqf Ibtida Index</title>
-<meta name="description" content="Browse the waqf-ibtida (HENTI / MULAI) index on the Quran text page by page, and report corrections.">
+<title>Waqaf Ibtida Index · tanda HENTI MULAI per kata, mushaf Madinah</title>
+<meta name="description" content="Indeks tanda waqaf ibtida (HENTI / MULAI) per kata untuk 604 halaman mushaf Madinah: 2.213 tanda, JSON dan CSV terbuka, dengan scan halaman untuk dicek. Waqf ibtida index of HENTI/MULAI marks.">
+<link rel="canonical" href="https://quran-waqf-ibtida.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Waqaf Ibtida Index">
+<meta property="og:title" content="Waqaf Ibtida Index · tanda HENTI MULAI">
+<meta property="og:description" content="Indeks tanda waqaf ibtida (HENTI / MULAI) per kata untuk 604 halaman mushaf Madinah: 2.213 tanda, JSON dan CSV terbuka, dengan scan halaman untuk dicek. Waqf ibtida index of HENTI/MULAI marks.">
+<meta property="og:url" content="https://quran-waqf-ibtida.netlify.app/">
+<meta property="og:image" content="https://quran-waqf-ibtida.netlify.app/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/json" href="/data/waqf-ibtida.json" title="Waqf ibtida index (JSON)">
+<link rel="alternate" type="text/csv" href="/data/waqf-ibtida.csv" title="Waqf ibtida index (CSV)">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "@id": "https://quran-waqf-ibtida.netlify.app/#dataset", "name": "Quran Waqf Ibtida Index (HENTI / MULAI)", "alternateName": ["Indeks waqaf ibtida", "quran-waqf-ibtida-index"], "description": "Waqf and ibtida marks (HENTI / MULAI) for all 604 pages of the Madinah 15-line mushaf, indexed by word as surah:ayah:word (quran.com / Tanzil Uthmani segmentation, riwayah Hafs). 2,213 marks: 2,202 repeat marks (underline from MULAI to HENTI) and 11 stop marks. Read with AI from public page scans at quran.tampang.com and checked page by page. Experimental, not guaranteed to be 100% correct.", "url": "https://quran-waqf-ibtida.netlify.app/", "sameAs": "https://github.com/ibndias/quran-waqf-ibtida-index", "keywords": ["waqaf ibtida", "waqf ibtida", "al-waqf wal-ibtida", "HENTI MULAI", "tanda waqaf", "Quran", "mushaf Madinah", "tajwid", "dataset"], "inLanguage": ["ar", "id", "en"], "isAccessibleForFree": true, "creator": {"@type": "Person", "name": "ibndias", "url": "https://github.com/ibndias"}, "isBasedOn": "https://quran.tampang.com/", "variableMeasured": ["kind", "restart", "stop", "page", "restart_line", "stop_line", "basis"], "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://quran-waqf-ibtida.netlify.app/data/waqf-ibtida.json"}, {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://quran-waqf-ibtida.netlify.app/data/waqf-ibtida.csv"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -106,6 +117,9 @@ main { display: flex; flex-direction: column; gap: 16px; padding-bottom: 40px; }
 .row .spacer { flex: 1; }
 .empty { color: var(--text-3); background: var(--surface); border: 1px dashed var(--border); border-radius: 12px; padding: 18px; text-align: center; }
 .status { color: var(--text-3); padding: 40px 0; text-align: center; }
+.about { border-top: 1px solid var(--border); padding: 20px 0 10px; color: var(--text-2); font-size: 14px; }
+.about h2 { font-size: 15px; color: var(--text); margin: 0 0 8px; }
+.surah-links { columns: 4 150px; font-size: 13px; padding-left: 1.6em; margin: 12px 0 0; }
 footer { color: var(--text-3); font-size: 12.5px; padding: 20px 0 40px; border-top: 1px solid var(--border); }
 </style>
 </head>
@@ -144,6 +158,7 @@ footer { color: var(--text-3); font-size: 12.5px; padding: 20px 0 40px; border-t
       <h2 id="title">Loading…</h2>
       <span class="meta" id="pmeta"></span>
       <span class="spacer"></span>
+      <a class="iconbtn" id="static">Page as text</a>
       <a class="cta" id="raise" target="_blank" rel="noopener">Report a difference to GitHub</a>
     </div>
     <div class="legend">Left: the digital Quran text with the index applied; the <b class="r">underline</b> runs from <b class="r">MULAI</b> (restart) to <b class="s">HENTI</b> (stop).
@@ -158,6 +173,12 @@ footer { color: var(--text-3); font-size: 12.5px; padding: 20px 0 40px; border-t
       <div id="list"></div>
     </section>
   </main>
+  <section class="about">
+    <h2>Tentang indeks ini · About</h2>
+    <p>Indeks <b>waqaf ibtida</b> ini mencatat setiap tanda <b>HENTI</b> (berhenti) dan <b>MULAI</b> (mulai lagi) di mushaf Madinah 604 halaman, per kata dengan format <code>surat:ayat:kata</code>. Ada 2.213 tanda: 2.202 tanda bergaris (berhenti lalu ulang dari MULAI) dan 11 tanda tanpa garis (berhenti lalu lanjut). Datanya terbuka dalam <a href="data/waqf-ibtida.json">JSON</a> dan <a href="data/waqf-ibtida.csv">CSV</a>, jadi bisa dipakai di aplikasi Al-Qur'an mana pun yang memakai segmentasi kata quran.com / Tanzil.</p>
+    <p>A word-level index of the waqf and ibtida (HENTI / MULAI) marks of a waqf-ibtida mushaf, for all 604 pages of the Madinah mushaf, free to use in any Quran app. Browse by <a href="/surah/">surah</a> or by page, e.g. <a href="/page/3/">page 3</a>.</p>
+    <nav aria-label="Surah"><ol class="surah-links"><li><a href="/surah/1/">Al-Fatihah</a></li><li><a href="/surah/2/">Al-Baqarah</a></li><li><a href="/surah/3/">Ali 'Imran</a></li><li><a href="/surah/4/">An-Nisa</a></li><li><a href="/surah/5/">Al-Ma'idah</a></li><li><a href="/surah/6/">Al-An'am</a></li><li><a href="/surah/7/">Al-A'raf</a></li><li><a href="/surah/8/">Al-Anfal</a></li><li><a href="/surah/9/">At-Tawbah</a></li><li><a href="/surah/10/">Yunus</a></li><li><a href="/surah/11/">Hud</a></li><li><a href="/surah/12/">Yusuf</a></li><li><a href="/surah/13/">Ar-Ra'd</a></li><li><a href="/surah/14/">Ibrahim</a></li><li><a href="/surah/15/">Al-Hijr</a></li><li><a href="/surah/16/">An-Nahl</a></li><li><a href="/surah/17/">Al-Isra</a></li><li><a href="/surah/18/">Al-Kahf</a></li><li><a href="/surah/19/">Maryam</a></li><li><a href="/surah/20/">Taha</a></li><li><a href="/surah/21/">Al-Anbiya</a></li><li><a href="/surah/22/">Al-Hajj</a></li><li><a href="/surah/23/">Al-Mu'minun</a></li><li><a href="/surah/24/">An-Nur</a></li><li><a href="/surah/25/">Al-Furqan</a></li><li><a href="/surah/26/">Ash-Shu'ara</a></li><li><a href="/surah/27/">An-Naml</a></li><li><a href="/surah/28/">Al-Qasas</a></li><li><a href="/surah/29/">Al-'Ankabut</a></li><li><a href="/surah/30/">Ar-Rum</a></li><li><a href="/surah/31/">Luqman</a></li><li><a href="/surah/32/">As-Sajdah</a></li><li><a href="/surah/33/">Al-Ahzab</a></li><li><a href="/surah/34/">Saba</a></li><li><a href="/surah/35/">Fatir</a></li><li><a href="/surah/36/">Ya-Sin</a></li><li><a href="/surah/37/">As-Saffat</a></li><li><a href="/surah/38/">Sad</a></li><li><a href="/surah/39/">Az-Zumar</a></li><li><a href="/surah/40/">Ghafir</a></li><li><a href="/surah/41/">Fussilat</a></li><li><a href="/surah/42/">Ash-Shura</a></li><li><a href="/surah/43/">Az-Zukhruf</a></li><li><a href="/surah/44/">Ad-Dukhan</a></li><li><a href="/surah/45/">Al-Jathiyah</a></li><li><a href="/surah/46/">Al-Ahqaf</a></li><li><a href="/surah/47/">Muhammad</a></li><li><a href="/surah/48/">Al-Fath</a></li><li><a href="/surah/49/">Al-Hujurat</a></li><li><a href="/surah/50/">Qaf</a></li><li><a href="/surah/51/">Adh-Dhariyat</a></li><li><a href="/surah/52/">At-Tur</a></li><li><a href="/surah/53/">An-Najm</a></li><li><a href="/surah/54/">Al-Qamar</a></li><li><a href="/surah/55/">Ar-Rahman</a></li><li><a href="/surah/56/">Al-Waqi'ah</a></li><li><a href="/surah/57/">Al-Hadid</a></li><li><a href="/surah/58/">Al-Mujadilah</a></li><li><a href="/surah/59/">Al-Hashr</a></li><li><a href="/surah/60/">Al-Mumtahanah</a></li><li><a href="/surah/61/">As-Saff</a></li><li><a href="/surah/62/">Al-Jumu'ah</a></li><li><a href="/surah/63/">Al-Munafiqun</a></li><li><a href="/surah/64/">At-Taghabun</a></li><li><a href="/surah/65/">At-Talaq</a></li><li><a href="/surah/66/">At-Tahrim</a></li><li><a href="/surah/67/">Al-Mulk</a></li><li><a href="/surah/68/">Al-Qalam</a></li><li><a href="/surah/69/">Al-Haqqah</a></li><li><a href="/surah/70/">Al-Ma'arij</a></li><li><a href="/surah/71/">Nuh</a></li><li><a href="/surah/72/">Al-Jinn</a></li><li><a href="/surah/73/">Al-Muzzammil</a></li><li><a href="/surah/74/">Al-Muddaththir</a></li><li><a href="/surah/75/">Al-Qiyamah</a></li><li><a href="/surah/76/">Al-Insan</a></li><li><a href="/surah/77/">Al-Mursalat</a></li><li><a href="/surah/78/">An-Naba</a></li><li><a href="/surah/79/">An-Nazi'at</a></li><li><a href="/surah/80/">'Abasa</a></li><li><a href="/surah/81/">At-Takwir</a></li><li><a href="/surah/82/">Al-Infitar</a></li><li><a href="/surah/83/">Al-Mutaffifin</a></li><li><a href="/surah/84/">Al-Inshiqaq</a></li><li><a href="/surah/85/">Al-Buruj</a></li><li><a href="/surah/86/">At-Tariq</a></li><li><a href="/surah/87/">Al-A'la</a></li><li><a href="/surah/88/">Al-Ghashiyah</a></li><li><a href="/surah/89/">Al-Fajr</a></li><li><a href="/surah/90/">Al-Balad</a></li><li><a href="/surah/91/">Ash-Shams</a></li><li><a href="/surah/92/">Al-Layl</a></li><li><a href="/surah/93/">Ad-Duha</a></li><li><a href="/surah/94/">Ash-Sharh</a></li><li><a href="/surah/95/">At-Tin</a></li><li><a href="/surah/96/">Al-'Alaq</a></li><li><a href="/surah/97/">Al-Qadr</a></li><li><a href="/surah/98/">Al-Bayyinah</a></li><li><a href="/surah/99/">Az-Zalzalah</a></li><li><a href="/surah/100/">Al-'Adiyat</a></li><li><a href="/surah/101/">Al-Qari'ah</a></li><li><a href="/surah/102/">At-Takathur</a></li><li><a href="/surah/103/">Al-'Asr</a></li><li><a href="/surah/104/">Al-Humazah</a></li><li><a href="/surah/105/">Al-Fil</a></li><li><a href="/surah/106/">Quraysh</a></li><li><a href="/surah/107/">Al-Ma'un</a></li><li><a href="/surah/108/">Al-Kawthar</a></li><li><a href="/surah/109/">Al-Kafirun</a></li><li><a href="/surah/110/">An-Nasr</a></li><li><a href="/surah/111/">Al-Masad</a></li><li><a href="/surah/112/">Al-Ikhlas</a></li><li><a href="/surah/113/">Al-Falaq</a></li><li><a href="/surah/114/">An-Nas</a></li></ol></nav>
+  </section>
   <footer>
     Words are <code>surah:ayah:word</code> (quran.com / Tanzil Uthmani segmentation); the text and line layout shown are quran.com's Uthmani text. Marks read from:
     <a href="https://quran.tampang.com/">quran.tampang.com</a>. Data:
@@ -306,6 +327,7 @@ function render() {
   img.alt = `Scan of mushaf page ${p}`;
   if (!img.src.endsWith(`pages/${pad(p)}.webp`)) img.src = `pages/${pad(p)}.webp`;
   $("raise").href = pageIssueUrl(p);
+  $("static").href = `/page/${p}/`;
   drawBands();
   loadText(p).then((t) => drawText(p, t)).catch(() => { $("mushaf").textContent = "Could not load this page's text."; });
   history.replaceState(null, "", `#p=${p}` + (state.sel ? `&m=${state.sel}` : ""));
