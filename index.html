@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Waqf Ibtida Index</title>
-<meta name="description" content="Browse the waqf-ibtida (HENTI / MULAI) index page by page beside the scan it was read from, and report corrections.">
+<meta name="description" content="Browse the waqf-ibtida (HENTI / MULAI) index on the Quran text page by page, and report corrections.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #f6f4ef; --surface: #ffffff; --border: #e3ded3; --text: #1f1d1a;
@@ -55,14 +55,29 @@ header { border-bottom: 1px solid var(--border); background: var(--surface); }
 .chip { border: 0; background: var(--accent-subtle); color: var(--text-2); border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
 .chip[aria-pressed="true"] { color: var(--accent); font-weight: 600; box-shadow: inset 0 0 0 1px var(--accent); }
 main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 20px; padding-bottom: 40px; }
-@media (max-width: 900px) { main { grid-template-columns: minmax(0, 1fr); } .panel { order: -1; } }
+@media (max-width: 900px) { main { grid-template-columns: minmax(0, 1fr); } }
 @media (min-width: 901px) { .panel { position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 32px); overflow: auto; } }
 @media (max-width: 560px) { .top .sub { order: 5; width: 100%; } .top { gap: 8px; } .legend { display: none; } }
-.scan { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); align-self: start; }
-.scan img { display: block; width: 100%; height: auto; }
-.band { position: absolute; border-radius: 4px; background: var(--band); pointer-events: none; transition: opacity .15s; }
-.band.stop { background: var(--band-stop); }
-.band.dim { opacity: 0; }
+.mushaf { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); align-self: start; padding: 18px 16px 26px; container-type: inline-size; }
+.mushaf .head { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--text-3); margin-bottom: 8px; }
+.line { display: flex; justify-content: space-between; direction: rtl; font-family: "Amiri Quran", Amiri, serif; font-size: min(28px, 5.4cqi); height: 2.5em; align-items: center; white-space: nowrap; }
+.line > span { line-height: 1.7; }
+.line .w { display: inline-block; }
+.line.short { justify-content: center; gap: .35em; }
+.w { position: relative; border-radius: 4px; padding: 0 1px; }
+.w.u { box-shadow: inset 0 -2px 0 var(--repeat); }
+.w.mk { cursor: pointer; }
+.w.sel { background: var(--repeat-bg); }
+.w.sel.st { background: var(--stop-bg); }
+.w.s0 { color: var(--stop); }
+.end { color: var(--text-3); font-size: .8em; }
+.tag { position: absolute; top: calc(100% + 1px); font: 600 max(8.5px, min(10.5px, 2cqi))/1 Inter, system-ui, sans-serif; letter-spacing: .02em; direction: ltr; pointer-events: none; }
+.tag.m { right: 0; color: var(--repeat); }
+.tag.h { left: 0; color: var(--stop); }
+.tag.mh { left: 50%; transform: translateX(-50%); white-space: nowrap; }
+.tag.mh b { color: var(--repeat); font-weight: 600; } .tag.mh i { color: var(--stop); font-style: normal; }
+.surah { text-align: center; font-family: "Amiri Quran", Amiri, serif; font-size: min(22px, 4.6cqi); border: 1px solid var(--border); border-radius: 10px; padding: 4px 0; margin: 10px 0 4px; background: var(--accent-subtle); }
+.basmala { text-align: center; font-family: "Amiri Quran", Amiri, serif; font-size: min(24px, 5cqi); line-height: 2.2; }
 .panel { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .panel h2 { font-size: 15px; margin: 0; font-weight: 600; }
 .panel .meta { color: var(--text-3); font-size: 13px; }
@@ -100,7 +115,7 @@ footer { color: var(--text-3); font-size: 12.5px; padding: 20px 0 40px; border-t
 <div class="wrap">
   <p class="note"><b>Experimental.</b> These marks were read with AI from public page images at
     <a href="https://quran.tampang.com/">quran.tampang.com</a> and checked, but are not guaranteed to be 100% correct.
-    Compare each mark with the scan beside it, and report anything wrong.</p>
+    Each page below is the digital Quran text with the index applied. To check a mark, open the page's scan and report anything wrong.</p>
   <div class="controls">
     <div class="pager">
       <button type="button" id="prev" aria-label="Previous page">‹</button>
@@ -116,22 +131,19 @@ footer { color: var(--text-3); font-size: 12.5px; padding: 20px 0 40px; border-t
     </div>
   </div>
   <main>
-    <div class="scan" id="scan">
-      <img id="img" alt="">
-      <div id="bands"></div>
-    </div>
+    <div class="mushaf" id="mushaf" aria-label="Page text with marks"></div>
     <section class="panel" aria-live="polite">
       <div>
         <h2 id="title">Loading…</h2>
         <div class="meta" id="pmeta"></div>
       </div>
-      <div class="legend"><b class="r">green</b> = restart word (MULAI), <b class="s">red</b> = stop word (HENTI).
-        The highlighted line on the scan is the selected mark's line; its tags hang just below the text.</div>
+      <div class="legend">The <b class="r">underline</b> runs from <b class="r">MULAI</b> (restart) to <b class="s">HENTI</b> (stop).
+        Tap a marked word or a card to highlight that mark.</div>
       <div id="list"></div>
     </section>
   </main>
   <footer>
-    Words are <code>surah:ayah:word</code> (quran.com / Tanzil Uthmani segmentation). Source images:
+    Words are <code>surah:ayah:word</code> (quran.com / Tanzil Uthmani segmentation); the text and line layout shown are quran.com's Uthmani text. Marks read from:
     <a href="https://quran.tampang.com/">quran.tampang.com</a>. Data:
     <a href="data/waqf-ibtida.json">JSON</a> · <a href="data/waqf-ibtida.csv">CSV</a>.
   </footer>
@@ -141,7 +153,7 @@ const SURAH = ["Al-Fatihah","Al-Baqarah","Ali 'Imran","An-Nisa","Al-Ma'idah","Al
 const REPO = "https://github.com/ibndias/quran-waqf-ibtida-index";
 const $ = (id) => document.getElementById(id);
 const state = { page: 1, sel: null, filter: "all" };
-let marks = [], byPage = new Map(), lines = {};
+let marks = [], byPage = new Map();
 
 const key = (loc) => loc.split(":").map(Number);
 const pad = (p) => String(p).padStart(3, "0");
@@ -167,33 +179,62 @@ function shown(m) {
   return state.filter === "all" || (state.filter === "eye" ? m.basis !== "readings agree" : m.kind === state.filter);
 }
 
-function drawBands() {
-  const img = $("img"), box = $("bands");
-  box.innerHTML = "";
-  if (!img.naturalWidth) return;
-  const L = lines[state.page] || {};
-  const sx = img.clientWidth / img.naturalWidth, sy = img.clientHeight / img.naturalHeight;
-  const m = marks.find((x) => x.id === state.sel);
-  if (!m) return;
-  const ls = new Set([m.restart_line, m.stop_line]);
-  for (let l = Math.min(...ls); l <= Math.max(...ls); l++) {
-    const b = L[l]; if (!b) continue;
-    const d = document.createElement("div");
-    d.className = "band" + (m.kind === "stop" ? " stop" : "");
-    // Include the strip under the text where the tags hang.
-    Object.assign(d.style, { left: (b[2] - 6) * sx + "px", width: (b[3] - b[2] + 12) * sx + "px",
-      top: (b[0] - 4) * sy + "px", height: (b[1] - b[0] + 34) * sy + "px" });
-    box.appendChild(d);
+const texts = new Map();
+const loadText = (p) => texts.get(p) || texts.set(p, fetch(`demo/text/${p}.json`).then((r) => r.json())).get(p);
+const BASMALA = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ";
+
+/** Which word of the page each mark touches: underline, tags and colour per word key. */
+function decorate() {
+  const d = new Map();
+  const at = (k) => d.get(k) || d.set(k, { ids: [], u: false, m: false, h: false, stop: false }).get(k);
+  return { d, at };
+}
+
+function drawText(p, text) {
+  if (state.page !== p) return;
+  const order = [];
+  for (const ln of Object.keys(text).sort((a, b) => a - b)) for (const w of text[ln]) if (!w[2]) order.push(w[0]);
+  const pos = new Map(order.map((k, i) => [k, i]));
+  const { d, at } = decorate();
+  for (const m of (byPage.get(p) || []).filter(shown)) {
+    const r = pos.get(m.restart), s = pos.get(m.stop);
+    if (m.kind === "repeat" && r !== undefined && s !== undefined) {
+      for (let i = r; i <= s; i++) { const x = at(order[i]); x.u = true; x.ids.push(m.id); }
+      at(m.restart).m = true; at(m.stop).h = true;
+    } else {
+      if (s !== undefined) { const x = at(m.stop); x.h = true; x.stop = true; x.ids.push(m.id); }
+      if (r !== undefined) { const x = at(m.restart); x.m = true; x.ids.push(m.id); }
+    }
   }
+  const sel = marks.find((x) => x.id === state.sel);
+  let html = `<div class="head"><span>Page ${p}</span><a href="pages/${pad(p)}.webp" target="_blank" rel="noopener">Check against the scan</a></div>`;
+  for (const ln of Object.keys(text).sort((a, b) => a - b)) {
+    const words = text[ln];
+    const first = words.find((w) => !w[2]);
+    if (first) {
+      const [su, ay, wd] = key(first[0]);
+      if (ay === 1 && wd === 1) {
+        html += `<div class="surah">${su}. ${SURAH[su - 1]}</div>`;
+        if (su !== 1 && su !== 9) html += `<div class="basmala" dir="rtl">${BASMALA}</div>`;
+      }
+    }
+    html += `<div class="line${words.length < 5 ? " short" : ""}">` + words.map((w) => {
+      if (w[2]) return `<span class="end">۝${esc(w[1])}</span>`;
+      const x = d.get(w[0]);
+      if (!x) return `<span class="w">${esc(w[1])}</span>`;
+      const on = sel && x.ids.includes(sel.id);
+      const cls = ["w", "mk", x.u && "u", x.stop && "s0", on && "sel", on && sel.kind === "stop" && "st"].filter(Boolean).join(" ");
+      return `<span class="${cls}" data-id="${x.ids[x.ids.length - 1]}" title="${w[0]}">${esc(w[1])}` +
+        (x.m && x.h ? `<span class="tag mh"><b>MULAI</b> · <i>HENTI</i></span>` : (x.m ? `<span class="tag m">MULAI</span>` : "") + (x.h ? `<span class="tag h">HENTI</span>` : "")) + `</span>`;
+    }).join(" ") + `</div>`;
+  }
+  $("mushaf").innerHTML = html;
 }
 
 function render() {
   const p = state.page;
   $("pageNum").value = p;
   $("prev").disabled = p <= 1; $("next").disabled = p >= 604;
-  const img = $("img");
-  img.alt = `Scan of mushaf page ${p}`;
-  if (!img.src.endsWith(`pages/${pad(p)}.webp`)) img.src = `pages/${pad(p)}.webp`;
   const all = byPage.get(p) || [];
   const list = all.filter(shown);
   const surahs = [...new Set(all.map((m) => key(m.restart)[0]))].map((s) => `${s}. ${SURAH[s - 1]}`);
@@ -212,7 +253,7 @@ function render() {
     </div>`).join("")
     : `<div class="empty">${all.length ? "No marks match this filter." : "This page has no HENTI / MULAI marks."}<br>
        <a class="report" href="${REPO}/issues/new?title=${encodeURIComponent("Missing mark on page " + p)}" target="_blank" rel="noopener">Report a missing mark</a></div>`;
-  drawBands();
+  loadText(p).then((t) => drawText(p, t)).catch(() => { $("mushaf").textContent = "Could not load this page's text."; });
   history.replaceState(null, "", `#p=${p}` + (state.sel ? `&m=${state.sel}` : ""));
 }
 
@@ -259,8 +300,11 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") go(state.page + 1);
   if (e.key === "ArrowLeft") go(state.page - 1);
 });
-$("img").onload = drawBands;
-window.addEventListener("resize", drawBands);
+$("mushaf").onclick = (e) => {
+  const w = e.target.closest(".w.mk"); if (!w) return;
+  state.sel = +w.dataset.id; render();
+  document.querySelector(`.mark[data-id="${state.sel}"]`)?.scrollIntoView({ block: "nearest" });
+};
 
 const root = document.documentElement;
 try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (_) {}
@@ -270,9 +314,9 @@ $("theme").onclick = () => {
   try { localStorage.setItem("theme", root.dataset.theme); } catch (_) {}
 };
 
-Promise.all([fetch("data/waqf-ibtida.json").then((r) => r.json()), fetch("demo/lines.json").then((r) => r.json())])
-  .then(([doc, ls]) => {
-    marks = doc.marks; lines = ls;
+fetch("data/waqf-ibtida.json").then((r) => r.json())
+  .then((doc) => {
+    marks = doc.marks;
     for (const m of marks) { if (!byPage.has(m.page)) byPage.set(m.page, []); byPage.get(m.page).push(m); }
     $("stats").textContent = `${doc.count_by_kind.repeat.toLocaleString()} repeat · ${doc.count_by_kind.stop} stop · 604 pages`;
     const h = new URLSearchParams(location.hash.slice(1));
